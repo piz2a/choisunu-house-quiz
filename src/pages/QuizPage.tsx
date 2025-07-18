@@ -1,9 +1,11 @@
 import {useLocation, useNavigate} from "react-router-dom";
 import {QUIZ_DATA} from "../QuizData.ts";
+import {useAnswerStore} from "../stores/answerStore.ts";
 
-export default function QuizPage({ handleClickOX }: { handleClickOX: (quizIndex: number, answer: boolean) => void }) {
+export default function QuizPage() {
     const location = useLocation();
     const navigate = useNavigate();
+    const {/* userAnswers, */setAnswer } = useAnswerStore();
 
     // ex: "#2_1" → ["2", "1"]
     const hash = location.hash.replace("#", "");
@@ -16,6 +18,12 @@ export default function QuizPage({ handleClickOX }: { handleClickOX: (quizIndex:
 
     if (!quiz) {
         return <p>문제가 존재하지 않습니다.</p>;
+    }
+
+    const handleClickOX = (answer: boolean) => {
+        setAnswer(quizIndex, answer);
+        // console.log(quizIndex, userAnswers, answer);
+        navigate(`#${quizIndex}_${answer ? 1 : 0}`);
     }
 
     const isCorrect = userAnswer === quiz.answer;
@@ -53,13 +61,13 @@ export default function QuizPage({ handleClickOX }: { handleClickOX: (quizIndex:
                 <div className="flex justify-center gap-6">
                     <button
                         className="text-3xl bg-gray-700 hover:bg-gray-600 rounded-lg w-16 h-16"
-                        onClick={() => handleClickOX(quizIndex, true)}
+                        onClick={() => handleClickOX(true)}
                     >
                         O
                     </button>
                     <button
                         className="text-3xl bg-gray-700 hover:bg-gray-600 rounded-lg w-16 h-16"
-                        onClick={() => handleClickOX(quizIndex, false)}
+                        onClick={() => handleClickOX(false)}
                     >
                         X
                     </button>

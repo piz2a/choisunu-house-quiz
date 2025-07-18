@@ -1,4 +1,4 @@
-  {
+{
   "name": "choisunu-house-quiz",
   "private": true,
   "version": "0.0.0",
@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@shadcn/ui": "^0.0.4",
     "@tailwindcss/vite": "^4.1.11",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

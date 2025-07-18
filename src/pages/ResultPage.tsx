@@ -1,6 +1,5 @@
 import {QUIZ_DATA} from "../QuizData.ts";
-import {useContext} from "react";
-import {UserAnswerContext} from "../App.tsx";
+import { useAnswerStore } from '../stores/answerStore'
 
 const getResultInfo = (count: number) => {
     if (count <= 1) {
@@ -35,7 +34,7 @@ const getResultInfo = (count: number) => {
 };
 
 export default function ResultPage() {
-    const userAnswers = useContext(UserAnswerContext);
+    const { userAnswers } = useAnswerStore();
     const correctCount = userAnswers.reduce((acc, answer, idx) => {
         return acc + (answer === QUIZ_DATA[idx].answer ? 1 : 0);
     }, 0);
