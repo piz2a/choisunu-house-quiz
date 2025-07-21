@@ -7,14 +7,14 @@ import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
     return (
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col min-h-screen text-primary-foreground">
             <BrowserRouter>
                 <header className="bg-yellow-800 text-center text-xl font-bold py-4">
-                    나도 이제 옛집 박사!
+                    <a href="/">나도 이제 옛집 박사!</a>
                 </header>
                 <main className="relative min-h-screen flex flex-col items-center justify-center">
                     <div className="absolute inset-0 z-0">
-                        <img src="/public/background.jpg" alt="background"
+                        <img src="/background.jpg" alt="background"
                              className="w-full h-full object-cover brightness-50"/>
                     </div>
                     <Routes>
@@ -29,8 +29,7 @@ function App() {
                         className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-center md:text-left">
                         <div>
                             <div className="flex justify-center md:justify-start items-center gap-2 mb-4">
-                                <img src="/logo.png" alt="logo" className="w-8 h-8"/>
-                                <span>내셔널트러스트<br/>문화유산기금</span>
+                                <a href="http://www.ntculture.or.kr/" target="_blank"><img src="/logo.png" alt="logo" className="invert grayscale h-10"/></a>
                             </div>
                             <div className="flex justify-center md:justify-start gap-4 text-lg mb-2">
                                 <a href="#"><i className="fab fa-instagram"></i></a>
@@ -39,7 +38,7 @@ function App() {
                             <p className="font-bold text-lg">문의</p>
                             <p>02-3675-3401~2</p>
                             <p>ntfund@naver.com</p>
-                            <p>자원활동가 <a href="https://linktr.ee/zihoahn">안지호</a></p>
+                            <p>자원활동가 <a href="https://linktr.ee/zihoahn" target="_blank">안지호</a></p>
                         </div>
                         <div>
                             <p className="font-bold text-lg">후원</p>
@@ -48,7 +47,7 @@ function App() {
                         </div>
                     </div>
                     <div className="text-center text-sm mt-8 text-gray-400">
-                        © 2025 The National Trust of Korea, Cultural Heritage Foundation. All rights reserved.
+                        © 2025 The National Trust of Korea, Cultural Heritage Foundation.<br/>All rights reserved.
                     </div>
                 </footer>
             </BrowserRouter>
