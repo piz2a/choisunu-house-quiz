@@ -9,13 +9,13 @@ function App() {
     return (
         <div className="flex flex-col min-h-screen text-primary-foreground">
             <BrowserRouter>
-                <header className="bg-yellow-800 text-center text-xl font-bold py-4">
-                    <a href="/">나도 이제 옛집 박사!</a>
+                <header className="bg-yellow-800 text-center text-3xl font-bold py-4 pb-5" style={{fontFamily: 'Wolin'}}>
+                    <a href="/">나도 이제 옛집 박사</a>
                 </header>
                 <main className="relative min-h-screen flex flex-col items-center justify-center">
                     <div className="absolute inset-0 z-0">
                         <img src="/background.jpg" alt="background"
-                             className="w-full h-full object-cover brightness-50"/>
+                             className="w-full h-full object-cover brightness-30"/>
                     </div>
                     <Routes>
                         <Route path="/" element={<MainPage/>}/>

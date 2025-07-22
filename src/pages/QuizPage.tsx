@@ -4,7 +4,6 @@ import {useAnswerStore} from "../stores/answerStore.ts";
 import {Button} from "@/components/ui/button";
 import {
     Card,
-    CardAction,
     CardContent,
     CardDescription,
     CardFooter,
@@ -44,14 +43,11 @@ export default function QuizPage() {
         <Card className="z-10 bg-gray-900 rounded-lg p-6 max-w-md text-center w-11/12 h-150">
             <CardHeader className="mt-10">
                 <CardTitle>
-                    <h2 className="text-2xl font-bold mb-2">박사 퀴즈 {quizIndex + 1}</h2>
+                    <h2 className="text-2xl font-bold mb-2" style={{fontFamily: 'Kanibuk'}}>박사 퀴즈 {quizIndex + 1}</h2>
                 </CardTitle>
-                <CardDescription>
+                <CardDescription className="h-16 text-gray-200">
                     {quiz.question}
                 </CardDescription>
-                <CardAction>
-                    <Button variant="link">Sign Up</Button>
-                </CardAction>
             </CardHeader>
             <CardContent>
                 <div className="flex justify-center gap-6">
@@ -87,7 +83,7 @@ export default function QuizPage() {
                     </Button>
                 </div>
             </CardContent>
-            <CardFooter className="flex flex-col mt-10 items-center gap-5">
+            <CardFooter className="flex flex-col mt-5 items-center gap-5">
                 {showExplanation ? (
                     <>
                         <p className={`mb-2 font-bold text-lg text-gray-300`}>
@@ -97,6 +93,7 @@ export default function QuizPage() {
                         <Textarea placeholder={quiz.explanation} disabled className="bg-gray-800 rounded-md p-6 w-11/12 h-30 pt-2 pl-3 pr-3" />
                         {quizIndex === QUIZ_DATA.length - 1 ? (
                             <Button
+                                style={{fontFamily: 'Kanibuk'}}
                                 className="text-3xl bg-blue-600 hover:bg-blue-500 rounded-lg w-40 h-16"
                                 onClick={() => navigate("/result")}
                             >
@@ -104,6 +101,7 @@ export default function QuizPage() {
                             </Button>
                         ) : (
                             <Button
+                                style={{fontFamily: 'Kanibuk'}}
                                 className="text-3xl bg-gray-700 hover:bg-gray-600 rounded-lg w-40 h-16"
                                 onClick={() => navigate(`#${quizIndex + 1}`)}
                             >
