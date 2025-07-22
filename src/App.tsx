@@ -8,7 +8,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 function App() {
     return (
         <div className="flex flex-col min-h-screen text-primary-foreground">
-            <BrowserRouter>
+            <BrowserRouter basename="/choisunu-house-quiz">
                 <header className="bg-yellow-800 text-center text-3xl font-bold py-4 pb-5" style={{fontFamily: 'Wolin'}}>
                     <a href="/">나도 이제 옛집 박사</a>
                 </header>
